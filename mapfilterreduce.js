@@ -70,3 +70,69 @@ const students = [
 let newStudents = students.map(student => {return {name: student.name, finalGrade: (0.2 * student.firstProject + 0.2 * student.secondProject + 0.6 * student.finalExam).toFixed()}});
 
 console.log(newStudents);
+
+
+const people = [
+    { name: "Candice", age: 25 },
+    { name: "Tammy",   age: 30 },
+    { name: "Allen",   age: 49 },
+    { name: "Nettie",  age: 21 },
+    { name: "Stuart",  age: 17 }
+  ];
+
+  const ages = people.reduce((sum, person) => {
+    return sum + person.age;
+  }, 0);
+  
+  console.log(ages); // <== 142
+
+
+  const menu = [
+    { name: "Carrots", calories: 150 },
+    { name: "Steak", calories: 350 },
+    { name: "Broccoli", calories: 120 },
+    { name: "Chicken", calories: 250 },
+    { name: "Pizza", calories: 520 }
+  ];
+
+  let averageCalories = menu.reduce((sum, meal) => {
+      return sum + meal.calories / 5;
+  }, 0);
+
+  console.log(averageCalories);
+
+
+  const product = {
+    name: "AmazonBasics Apple Certified Lightning to USB Cable",
+    price: 7.99,
+    manufacter: "Amazon",
+    reviews:
+    [
+      {  user: "Pavel Nedved",
+        comments: "It was really usefull, strongly recommended",
+        rate: 4
+      },
+      {  user: "Alvaro Trezeguet",
+        comments: "It lasted 2 days",
+        rate: 1
+      },
+      {  user: "David Recoba",
+        comments: "Awesome",
+        rate: 5
+      },
+      {  user: "Jose Romero",
+        comments: "Good value for money",
+        rate: 4
+      },
+      {  user: "Antonio Cano",
+        comments: "It broked really fast",
+        rate: 2
+      },
+    ]
+  }
+
+  let averageRate = product.reviews.reduce((sum, review) => {
+      return sum + review.rate / 5;
+  }, 0).toFixed(1);
+
+  console.log(averageRate);
